@@ -1,0 +1,113 @@
+ body {
+    background-image: url(backfoto.jpg); 
+    background-position: center; 
+    background-attachment: fixed;
+}
+
+h1 {
+	text-align: center;
+	font-size: 6em;
+	color : black ;
+	font-family: 'Press Start 2P';
+	text-shadow: 0px 10px 0px  #7582a1 ;
+}
+
+h2 {
+	margin: 5px 10px;
+	display: inline-block;
+	color : white;
+	font-family: 'Press Start 2P';
+}
+
+/*==========elements of game==========*/
+.board {
+	height: 10px;
+	background-color:  white;
+	position: relative;
+	box-shadow: 0px 1px 3px 1px black ;
+	border-radius: 5px;
+}
+
+.ball {
+	width:  20px;
+	height: 20px;
+	background-color:  red;
+	position: relative;
+	border-radius: 100%;
+}
+
+.game-box {
+	position: relative;
+	box-shadow: 0px 0px 20px 5px black ;
+	height: 700px;
+	width: 700px;
+	border: 5px solid black;
+	margin: auto;
+}
+
+.game-info {
+	text-align: center;
+	padding-top: 20px;
+}
+
+
+
+.alert {
+	font-size: 4em;
+ 	position: absolute;
+	top: 250px;
+	left: 100px;
+	font-family: 'Press Start 2P';	
+}
+
+.lose {
+ 	color: red;
+	text-shadow: 0px 0px 23px  red ;
+}
+
+.win {
+	color: green;
+	text-shadow: 0px 0px 15px  green ;
+	font-size: 3em;
+}
+
+.info {
+	color: white;	
+	font-size: 2em;
+}
+
+.btn {
+	margin: auto;
+	width: 400px;
+	font-family: 'Press Start 2P';
+}
+
+.btn:focus {
+	outline: 0 !important;
+}
+
+.animation {
+	-webkit-transition: 1s linear all;
+	transition: 1s linear all;
+}
+ 
+.animation.ng-enter {
+	opacity: 0;
+	top: 0px !important;
+} 
+        
+.animation.ng-enter.ng-enter-active { 
+	opacity: 1;
+} 
+ 
+.animation.ng-leave { }       
+.animation.ng-leave.ng-leave-active {
+	opacity: 0;
+	top: 500px !important;
+} 
+
+ #footer {
+ 	margin:50px auto;
+ 	color: white;
+	width: 200px;
+}
