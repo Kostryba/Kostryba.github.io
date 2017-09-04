@@ -13,6 +13,12 @@ app.controller('MyController', function($scope,$interval,$timeout){
 		info    : true
 	};
 
+	$scope.sound = {
+		play     : false,
+		pause    : true
+	};
+
+
 
 	$scope.start = function () {
 
@@ -71,6 +77,18 @@ app.controller('MyController', function($scope,$interval,$timeout){
  					$scope.board.x -= $scope.board.speed;
  				}
 	 		}
+             //===background sound ===================
+	 		if (event.keyCode === 13) {
+
+	 			if ($scope.sound.pause === true) {
+	 				document.getElementById('back').play();
+	 				$scope.sound.pause = false;
+	 			}  else {
+	 				 document.getElementById('back').pause();
+	 				 $scope.sound.pause = true;
+	 			   } 
+	 		}
+	 		//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 	};
 
 //========================== ball DOWN===========================
@@ -79,8 +97,10 @@ app.controller('MyController', function($scope,$interval,$timeout){
 		$scope.ball.y += $scope.ball.speed;
 		$scope.game.start = false;
  			if ($scope.ball.y >= $scope.board.y) {
-
- 				if($scope.board.x >= ($scope.ball.x + 6 - $scope.board.width)  && $scope.board.x <= ($scope.ball.x + 11)) { //reflect
+ 				//reflection
+ 				if($scope.board.x >= ($scope.ball.x + 6 - $scope.board.width)  && $scope.board.x <= ($scope.ball.x + 11)) { 
+ 					document.getElementById('reflect').play();
+ 					document.getElementById('reflect').volume=0.5;
 	 				$scope.board.width -= 5;
 	 				$scope.ball.speed  += 0.1;
 	 				$scope.game.score ++;
@@ -88,7 +108,7 @@ app.controller('MyController', function($scope,$interval,$timeout){
 		 			$scope.yUP = $interval($scope.ballMoveUp, 1);
  				}
  			}
-
+   			
  			if ($scope.ball.y >= 670){
 
  				if ($scope.game.score > $scope.game.record) {
@@ -147,6 +167,7 @@ app.controller('MyController', function($scope,$interval,$timeout){
 				$scope.yLEFT = $interval($scope.ballMoveLeft, 1);
 			}
 	};
+
 
 });
 
