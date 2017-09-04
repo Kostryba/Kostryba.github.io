@@ -21,7 +21,7 @@
 		
 		  	<p class="alert lose animation" ng-if="game.lose">YOU LOSE</p>
 		  	<p class="alert win animation"  ng-if="game.win" >NEW  RECORD:{{game.record}}</p>
-		  	<p class="alert info"           ng-if="game.info"> press "a" to move left<br> press "d" to move right</p>
+		  	<p class="alert info"           ng-if="game.info"> press "a" to move left<br><br> press "d" to move right<br><br>press "enter" to play/pause background music</p>
 
 			<div class="ball"  ng-if="ball.show" style = "top: {{ball.y}}px; left: {{ball.x}}px;"></div>
 
@@ -38,5 +38,12 @@
 			<button class="btn btn-default btn-lg btn-block " ng-click="start()" ng-disabled=" !game.start ">START GAME</button>
 		
 		<p id="footer">Created by Oleksandr Kostryba</p>
+
+
+		<audio id="back" src="public/sounds/back.mp3" loop></audio>
+		<audio id="reflect" src="public/sounds/boink.wav"></audio>
+
+
+
   </body>
 </html>
