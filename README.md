@@ -4,5 +4,3 @@
 run project <br>
 1) cope project<br>
 2) open index.html in your browser<br><hr>
-hint<br>
-Dont fogget to change the language on the keyboard (EN)
